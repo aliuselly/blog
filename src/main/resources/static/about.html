@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>aliuselly 个人博客</title>
+
+<!--    styles-->
+    <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
+<!--    js-->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script src="js/vue/vue.min.js"></script>
+    <script src="js/vue/vue-axios.min.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+<body>
+<!--头部-->
+    <div id="about-header">
+        <custom-header></custom-header>
+    </div>
+
+<!--    题图-->
+    <img id="titu" src="img/about/71320265_0.jpg">
+<!--    主体内容-->
+    <div id="content">
+<!--        关于信息-->
+        <div class="aboutInfo">
+            <div class="leftInfo">
+                <img src="img/homeland.jpg">
+                <h2>aliuselly</h2>
+                <h4>小白一名，请多多指教.</h4>
+                <h4>日常记录生活或技术博客～</h4>
+                <h4>而现在正为找工作而烦恼。</h4>
+            </div>
+            <div class="rightInfo">
+                <h2>博客简单说明：</h2>
+                <div class="aboutArticle">
+                    <div class="title">
+                        该博客是基于 Spring Boot 与 Vue 框架
+                    </div>
+                    <div class="summary">
+                        前后端分离，不过并没有那么规范。
+                        <br>
+                        同时呢，现在博客很简陋，希望各位看官别介意。
+                        <br>
+                        如有需要可联系下方的邮箱～
+                    </div>
+                </div>
+                <div class="aboutArticle">
+                    <div class="title">
+                        <a href="https://cn.vuejs.org/v2/guide/">关于 Vue 的参考</a>
+                    </div>
+                    <div class="summary">
+                        个人觉得自己的 Vue 写的很烂，其实是脑海中突然的一个想法，
+                        <br>
+                        然后就直接写了，基本都参考 Vue 官网。
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        END ABOUT INFO-->
+
+<!--        留言区-->
+        <div style="margin-top: 60px;">
+            <label>留言列表：</label>
+        </div>
+        <div id="aboutCommentList" class="commentList">
+            <br>
+            <about-comment v-for="(comment, index) in comments" v-bind:comment="comment" v-bind:key="comment.id" v-bind:total-size="comments.length" v-bind:current-index="index"></about-comment>
+        </div>
+        <div class="commentList"></div>
+<!--        EMD COMMENT LIST-->
+
+<!--        新增留言-->
+        <div class="comment" id="aboutAddComment">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    新增留言
+                </div>
+                <div class="panel-body">
+                    <label>名称：</label>
+                    <input id="commentName" class="form-control" v-model="aboutCommentName" placeholder="请留下您的名称">
+                    <label>Email：</label>
+                    <input id="commentEmail" class="form-control" v-model="aboutCommentEmail" placeholder="Email 可留空">
+                    <label>评论内容：</label>
+                    <textarea id="commentContent" rows="3" class="form-control" v-model="aboutCommentContent" placeholder="请留下您宝贵的意见"></textarea>
+                    <br>
+                    <div class="text-right">
+                        <button id="addComment" class="btn btn-success" v-on:click="aboutDoAddComment">确认添加</button>
+                    </div>
+                </div>
+<!--                END PANEL BODY-->
+            </div>
+<!--            END PANEL-->
+        </div>
+<!--        END COMMENT-->
+
+        <!--    提示不能为空信息 MODAL-->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header alert-success">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">温馨提示: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>名称和评论内容不能为空！同时希望您能留下您高贵的 Email 地址供我们联系！</label>
+                            </div>
+                        </div>
+                        <!--                    END ROW-->
+                    </div>
+                    <!--                END MODAL BODY-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">我知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END MODAL-->
+
+<!--        添加成功提示信息 MODAL-->
+        <div class="modal fade" id="aboutAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" v-on:click.self="aboutDoReload">
+            <div class="modal-dialog">
+                <div class="modal-content" id="addModalContent">
+                    <div class="modal-header alert-success">
+                        <h4 class="modal-title">系统提示: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>添加成功！</label>
+                            </div>
+                        </div>
+                        <!--                    END ROW-->
+                    </div>
+                    <!--                END MODAL BODY-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="addConfirmBtn" v-on:click="aboutDoReload">感谢支持！</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END MODAL-->
+    </div>
+
+<!--尾部-->
+    <div id="about-footer">
+        <custom-footer></custom-footer>
+    </div>
+
+    <script>
+        // 头部
+        new Vue({
+            el: '#about-header',
+            component: ['CustomHeader']
+        });
+
+        // 尾部
+        new Vue({
+            el: '#about-footer',
+            component: ['CustomFooter']
+        });
+
+        // 装填评论数据
+        // 突然之间发现不用 component 也没事的，猜测，这个自定义标签也在这个 commentList 组件的下面的问题，如果不在的话，才是需要的？
+        // 还有，这里该优化一下，不要文章里边的评论，做个排除，这里是全要了
+        // 已经弄好了，排除掉了博文评论的信息，只要对整个博客的评论信息
+        new Vue({
+            el: '#aboutCommentList',
+            data: {
+                comments: []
+            },
+            mounted() {
+                axios
+                    .get('http://localhost:8080/api/comment/common', {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => this.comments = response.data)
+                    .catch(err => {
+                        console.log(err);
+                        alert('获取全部评论失败！');
+                    });
+            }
+        });
+
+        // 添加评论
+        new Vue({
+            el: '#aboutAddComment',
+            data: {
+                aboutCommentName: '',
+                aboutCommentEmail: '',
+                aboutCommentContent: ''
+            },
+            methods: {
+                aboutDoAddComment() {
+                    if (!this.aboutCommentName || !this.aboutCommentContent)
+                    {
+                        $('#aboutModal').modal();
+                        return;
+                    }
+                    axios
+                        .post('http://localhost:8080/api/comment', {
+                            name: this.aboutCommentName,
+                            email: this.aboutCommentEmail,
+                            content: this.aboutCommentContent
+                        })
+                        .then(response => {
+                            console.log(response);
+                            $('#aboutAddModal').modal();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert('添加评论数据失败！');
+                        });
+                }
+            }
+        });
+
+        // 确认信息框
+        new Vue({
+            el: '#aboutAddModal',
+            methods: {
+                aboutDoReload() {
+                    location.reload();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

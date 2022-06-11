@@ -1,0 +1,7 @@
+2022-05-20 18:13:20.911 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 55 ] - Starting BlogDemoApplicationTests using Java 14.0.2 on debian with PID 60102 (started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-20 18:13:20.913 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-20 18:13:22.407 [ main ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-20 18:13:23.318 [ main ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-20 18:13:24.779 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 61 ] - Started BlogDemoApplicationTests in 4.458 seconds (JVM running for 6.056)
+2022-05-20 18:13:25.262 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-20 18:13:25.269 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed

@@ -1,0 +1,17 @@
+2022-05-24 16:23:12.694 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 55 ] - Starting BlogDemoApplicationTests using Java 14.0.2 on debian with PID 19927 (started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-24 16:23:12.705 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-24 16:23:15.202 [ main ] - [ INFO  ] [ o.s.b.f.a.AutowiredAnnotationBeanPostProcessor : 478 ] - Autowired annotation is not supported on static fields: public static java.lang.String org.aliuselly.blog_demo.controller.BackstageController.USERNAME
+2022-05-24 16:23:15.202 [ main ] - [ INFO  ] [ o.s.b.f.a.AutowiredAnnotationBeanPostProcessor : 478 ] - Autowired annotation is not supported on static fields: private static java.lang.String org.aliuselly.blog_demo.controller.BackstageController.PASSWORD
+2022-05-24 16:23:15.294 [ main ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-24 16:23:17.101 [ main ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-24 16:23:19.993 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 61 ] - Started BlogDemoApplicationTests in 7.935 seconds (JVM running for 10.012)
+2022-05-24 16:23:20.935 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-24 16:23:20.943 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-24 16:24:39.632 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 55 ] - Starting BlogDemoApplicationTests using Java 14.0.2 on debian with PID 20487 (started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-24 16:24:39.635 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-24 16:24:41.105 [ main ] - [ INFO  ] [ o.s.b.f.a.AutowiredAnnotationBeanPostProcessor : 478 ] - Autowired annotation is not supported on static fields: private static java.lang.String org.aliuselly.blog_demo.controller.BackstageController.PASSWORD
+2022-05-24 16:24:41.175 [ main ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-24 16:24:42.064 [ main ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-24 16:24:43.635 [ main ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplicationTests : 61 ] - Started BlogDemoApplicationTests in 4.485 seconds (JVM running for 6.008)
+2022-05-24 16:24:44.077 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-24 16:24:44.102 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed

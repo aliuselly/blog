@@ -1,0 +1,678 @@
+2022-05-25 16:41:36.885 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 69951 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 16:41:36.896 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 16:41:37.024 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 16:41:37.025 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 16:41:39.352 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 16:41:39.358 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:41:39.359 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 16:41:39.359 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 16:41:39.449 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 16:41:39.449 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 2423 ms
+2022-05-25 16:41:39.560 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 16:41:40.357 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 16:41:40.847 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 16:41:40.949 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:41:40.958 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 16:41:41.082 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.085 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.086 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.086 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.087 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.087 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.104 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.109 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.109 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.113 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.116 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.120 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.124 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.135 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.140 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.140 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.141 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.141 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.141 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.142 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.149 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.149 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.157 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.162 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.167 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.185 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.185 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.186 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.186 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.191 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.192 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.192 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.200 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.207 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.215 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:41:41.234 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 5.618 seconds (JVM running for 6.847)
+2022-05-25 16:48:05.877 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.apache.coyote.http11.Http11Processor : 175 ] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03b=)0xe40xbb0xe5 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2022-05-25 16:48:56.112 [ http-nio-8080-exec-4 ] - [ INFO  ] [ org.apache.coyote.http11.Http11Processor : 175 ] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x0380x0bt0xa60xf8V0x0f?0xf00x8aK0xa1)0x9e0x97b0x9500xda0x0b%0xd90x96l0xbc0xc30x040xd3D0x020x1d0 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2022-05-25 16:49:42.348 [ http-nio-8080-exec-3 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 16:49:42.348 [ http-nio-8080-exec-3 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 16:49:42.349 [ http-nio-8080-exec-3 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 16:52:04.383 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 16:52:04.388 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 16:52:09.586 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 72978 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 16:52:09.588 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 16:52:09.698 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 16:52:09.699 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 16:52:10.746 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 16:52:10.752 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:52:10.752 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 16:52:10.752 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 16:52:10.788 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 16:52:10.789 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1089 ms
+2022-05-25 16:52:10.854 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 16:52:11.340 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 16:52:11.796 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 16:52:11.902 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:52:11.911 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 16:52:12.042 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.045 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.046 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.046 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.046 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.047 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.061 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.066 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.067 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.070 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.073 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.076 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.079 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.094 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.098 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.098 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.099 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.099 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.100 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.100 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.103 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.103 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.107 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.107 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.116 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.121 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.126 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.146 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.151 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.152 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.152 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.160 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.167 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.176 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:52:12.196 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.202 seconds (JVM running for 3.976)
+2022-05-25 16:52:16.053 [ http-nio-8080-exec-1 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 16:52:16.053 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 16:52:16.054 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 16:53:28.974 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 16:53:28.981 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 16:53:32.715 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 73393 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 16:53:32.717 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 16:53:32.779 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 16:53:32.779 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 16:53:33.909 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 16:53:33.915 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:53:33.916 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 16:53:33.916 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 16:53:33.955 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 16:53:33.956 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1176 ms
+2022-05-25 16:53:34.019 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 16:53:34.480 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 16:53:34.904 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 16:53:35.012 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 16:53:35.021 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 16:53:35.153 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.156 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.157 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.157 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.158 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.158 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.173 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.178 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.178 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.181 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.184 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.187 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.190 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.200 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.204 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.205 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.205 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.206 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.206 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.207 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.209 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.210 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.213 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.213 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.221 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.226 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.231 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.249 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.250 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.250 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.250 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.256 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.256 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.257 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.265 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.272 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.281 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 16:53:35.300 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.113 seconds (JVM running for 3.827)
+2022-05-25 16:53:37.649 [ http-nio-8080-exec-1 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 16:53:37.649 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 16:53:37.650 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:00:39.336 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:00:39.340 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 17:00:43.675 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 75272 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 17:00:43.677 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 17:00:43.763 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 17:00:43.763 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 17:00:44.899 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 17:00:44.904 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:00:44.905 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 17:00:44.905 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 17:00:44.941 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 17:00:44.942 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1178 ms
+2022-05-25 17:00:45.005 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 17:00:45.501 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 17:00:45.925 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 17:00:46.025 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:00:46.033 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 17:00:46.147 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.150 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.151 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.151 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.152 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.152 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.167 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.172 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.172 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.175 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.178 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.181 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.184 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.206 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.210 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.211 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.211 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.212 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.212 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.212 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.215 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.216 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.219 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.220 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.228 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.235 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.242 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.265 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.265 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.266 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.266 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.274 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.274 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.275 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.286 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.294 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.303 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:00:46.324 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.188 seconds (JVM running for 3.969)
+2022-05-25 17:01:20.522 [ http-nio-8080-exec-2 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 17:01:20.523 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 17:01:20.524 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:02:09.268 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:02:09.276 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 17:02:13.346 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 75703 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 17:02:13.349 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 17:02:13.522 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 17:02:13.527 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 17:02:14.646 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 17:02:14.652 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:02:14.653 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 17:02:14.653 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 17:02:14.690 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 17:02:14.690 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1162 ms
+2022-05-25 17:02:14.761 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 17:02:15.244 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 17:02:15.682 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 17:02:15.782 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:02:15.791 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 17:02:15.926 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.929 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.930 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.930 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.930 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.931 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.946 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.950 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.951 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.954 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.957 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.960 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.962 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.973 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.977 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.977 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.978 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.978 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.979 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.979 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.982 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.982 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.985 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.986 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.994 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:15.999 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.004 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.021 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.022 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.022 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.023 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.029 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.029 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.029 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.037 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.045 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.054 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:02:16.079 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.224 seconds (JVM running for 3.838)
+2022-05-25 17:02:22.325 [ http-nio-8080-exec-1 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 17:02:22.325 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 17:02:22.326 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:04:49.119 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:04:49.123 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 17:04:53.096 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 76530 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 17:04:53.099 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 17:04:53.159 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 17:04:53.160 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 17:04:54.384 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 17:04:54.390 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:04:54.391 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 17:04:54.391 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 17:04:54.433 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 17:04:54.434 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1273 ms
+2022-05-25 17:04:54.505 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 17:04:55.040 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 17:04:55.543 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 17:04:55.671 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:04:55.680 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 17:04:55.821 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.834 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.835 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.835 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.836 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.836 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.851 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.856 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.856 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.860 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.863 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.865 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.868 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.879 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.883 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.883 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.884 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.884 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.885 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.885 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.888 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.888 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.891 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.892 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.899 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.904 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.909 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.928 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.928 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.928 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.929 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.934 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.935 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.935 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.944 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.952 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.961 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:04:55.982 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.48 seconds (JVM running for 4.361)
+2022-05-25 17:05:01.178 [ http-nio-8080-exec-2 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 17:05:01.178 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 17:05:01.179 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:05:44.605 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:05:44.609 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 17:05:49.416 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 76856 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 17:05:49.421 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 17:05:49.537 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 17:05:49.537 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 17:05:50.716 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 17:05:50.722 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:05:50.722 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 17:05:50.722 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 17:05:50.762 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 17:05:50.763 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1225 ms
+2022-05-25 17:05:50.836 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 17:05:51.341 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 17:05:51.834 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 17:05:51.956 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:05:51.966 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 17:05:52.115 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.118 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.119 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.119 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.120 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.120 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.136 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.141 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.141 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.145 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.148 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.151 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.154 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.165 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.169 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.169 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.170 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.170 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.170 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.171 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.174 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.174 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.178 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.178 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.187 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.192 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.199 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.219 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.220 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.220 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.221 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.230 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.231 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.231 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.243 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.253 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.265 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:05:52.289 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.575 seconds (JVM running for 4.382)
+2022-05-25 17:05:54.049 [ http-nio-8080-exec-1 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 17:05:54.049 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 17:05:54.050 [ http-nio-8080-exec-1 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:07:14.026 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:07:14.030 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
+2022-05-25 17:07:17.022 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 55 ] - Starting BlogDemoApplication using Java 14.0.2 on debian with PID 77279 (/home/aliuselly/IdeaProjects/blog_demo/target/classes started by aliuselly in /home/aliuselly/IdeaProjects/blog_demo)
+2022-05-25 17:07:17.024 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 640 ] - No active profile set, falling back to 1 default profile: "default"
+2022-05-25 17:07:17.193 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-25 17:07:17.193 [ restartedMain ] - [ INFO  ] [ o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor : 255 ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-25 17:07:18.218 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 108 ] - Tomcat initialized with port(s): 8080 (http)
+2022-05-25 17:07:18.224 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:07:18.224 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardService : 173 ] - Starting service [Tomcat]
+2022-05-25 17:07:18.225 [ restartedMain ] - [ INFO  ] [ org.apache.catalina.core.StandardEngine : 173 ] - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-25 17:07:18.261 [ restartedMain ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring embedded WebApplicationContext
+2022-05-25 17:07:18.261 [ restartedMain ] - [ INFO  ] [ o.s.b.w.s.c.ServletWebServerApplicationContext : 290 ] - Root WebApplicationContext: initialization completed in 1067 ms
+2022-05-25 17:07:18.329 [ restartedMain ] - [ INFO  ] [ c.a.d.s.b.a.DruidDataSourceAutoConfigure : 56 ] - Init DruidDataSource
+2022-05-25 17:07:18.788 [ restartedMain ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 995 ] - {dataSource-1} inited
+2022-05-25 17:07:19.235 [ restartedMain ] - [ INFO  ] [ o.s.b.d.autoconfigure.OptionalLiveReloadServer : 58 ] - LiveReload server is running on port 35729
+2022-05-25 17:07:19.332 [ restartedMain ] - [ INFO  ] [ org.apache.coyote.http11.Http11NioProtocol : 173 ] - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-25 17:07:19.347 [ restartedMain ] - [ INFO  ] [ o.s.boot.web.embedded.tomcat.TomcatWebServer : 220 ] - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-25 17:07:19.464 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.467 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.467 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.468 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.468 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.469 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.484 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.489 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.489 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.493 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.496 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.498 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.502 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.513 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.518 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.519 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.519 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Boolean, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.520 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.520 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.520 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.523 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.524 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.527 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.527 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.535 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.540 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.546 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.564 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.564 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.565 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.565 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.571 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.571 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.572 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: String, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.579 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.587 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.596 [ restartedMain ] - [ WARN  ] [ s.d.s.r.operation.OperationImplicitParameterReader : 170 ] - Unable to interpret the implicit parameter configuration with dataType: Long, dataTypeClass: class java.lang.Void
+2022-05-25 17:07:19.616 [ restartedMain ] - [ INFO  ] [ org.aliuselly.blog_demo.BlogDemoApplication : 61 ] - Started BlogDemoApplication in 3.171 seconds (JVM running for 3.948)
+2022-05-25 17:07:22.156 [ http-nio-8080-exec-2 ] - [ INFO  ] [ o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] : 173 ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 17:07:22.156 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 525 ] - Initializing Servlet 'dispatcherServlet'
+2022-05-25 17:07:22.157 [ http-nio-8080-exec-2 ] - [ INFO  ] [ org.springframework.web.servlet.DispatcherServlet : 547 ] - Completed initialization in 1 ms
+2022-05-25 17:07:22.710 [ http-nio-8080-exec-5 ] - [ ERROR ] [ druid.sql.Statement : 152 ] - {conn-10005, pstmt-20006} execute error. insert into sys_log (ip, remark, operate_url, operate_by) values (?, ?, ?, ?)
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'operate_url' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:664)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:181)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy83.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.insert(Unknown Source)
+	at org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils.insert(MyBatis3Utils.java:115)
+	at org.aliuselly.blog_demo.dao.SysLogMapper.insertSelective(SysLogMapper.java:108)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:728)
+	at org.apache.ibatis.binding.MapperProxy$DefaultMethodInvoker.invoke(MapperProxy.java:159)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.insertSelective(Unknown Source)
+	at org.aliuselly.blog_demo.service.impl.SysServiceImpl.addLog(SysServiceImpl.java:30)
+	at org.aliuselly.blog_demo.interceptor.ForeInterceptor.postHandle(ForeInterceptor.java:67)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:165)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1074)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2022-05-25 17:07:23.066 [ http-nio-8080-exec-5 ] - [ ERROR ] [ o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] : 175 ] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'operate_url' at row 1
+### The error may exist in org/aliuselly/blog_demo/dao/SysLogMapper.java (best guess)
+### The error may involve org.aliuselly.blog_demo.dao.SysLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into sys_log (ip, remark, operate_url, operate_by) values (?, ?, ?, ?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'operate_url' at row 1
+; Data truncation: Data too long for column 'operate_url' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'operate_url' at row 1] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'operate_url' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:664)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:181)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy83.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.insert(Unknown Source)
+	at org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils.insert(MyBatis3Utils.java:115)
+	at org.aliuselly.blog_demo.dao.SysLogMapper.insertSelective(SysLogMapper.java:108)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:728)
+	at org.apache.ibatis.binding.MapperProxy$DefaultMethodInvoker.invoke(MapperProxy.java:159)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.insertSelective(Unknown Source)
+	at org.aliuselly.blog_demo.service.impl.SysServiceImpl.addLog(SysServiceImpl.java:30)
+	at org.aliuselly.blog_demo.interceptor.ForeInterceptor.postHandle(ForeInterceptor.java:67)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPostHandle(HandlerExecutionChain.java:165)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1074)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2022-05-25 17:07:23.211 [ http-nio-8080-exec-5 ] - [ WARN  ] [ o.s.w.s.m.support.DefaultHandlerExceptionResolver : 208 ] - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class java.util.LinkedHashMap] with preset Content-Type 'application/font-woff;charset=UTF-8']
+2022-05-25 17:08:59.122 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2073 ] - {dataSource-1} closing ...
+2022-05-25 17:08:59.126 [ SpringApplicationShutdownHook ] - [ INFO  ] [ com.alibaba.druid.pool.DruidDataSource : 2146 ] - {dataSource-1} closed
