@@ -1,0 +1,87 @@
+# tomcat 配置
+server:
+  port: 8080
+  # 编码配置
+  tomcat:
+    # 单独对运行容器进行配置(编码)，下面那个请求与响应的，这个意思很明显，就是 url 的时候，xxx?xxx=xxx 的时候，避免提交上面的数据乱码
+    uri-encoding: UTF-8
+  # https://www.cnblogs.com/cecWork/p/13325425.html
+  # 通用配置(编码)
+  servlet:
+    encoding:
+      charset: UTF-8
+      # force 是力量的意思，这个配置的意思就是，是否在请求与响应那里对编码进行强制转换，转换成上面那个，也许就是请求体里面的东西吧
+      force: true
+      # 个人理解：开启自定义编码应用
+      enabled: true
+
+# 数据库连接配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog_demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: caonima
+    # 初始化大小、最小、最大配置
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒(个人理解，即，现在的，是检测活跃中的，不在池子里面，正在运行 sql 的，每隔这点时间检测一下，这个 sql 是否运行完成了，连接没用了，就放回池子，然后呢，放回池子了，肯定也是空闲的，因此呢，再下面那个就是检测超过 min-idle 的关闭的)
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # https://www.jianshu.com/p/c9845884d735 这里说，mysql 的这么配置是不会起作用的，其实是起作用的，只不过呢，是指定了测试的语句吧，不过，看了下，貌似，真的不起作用，除非条件不符合了，才会起作用
+      # https://www.cnblogs.com/mingmingcome/p/9310371.html
+      # 个人理解：validation 是验证连接用的 sql，然后呢，idle 是测试这个池子中的连接是否是已经死了，borrow 是测试 new 的时候的，return 是返回池子的时候的
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开 PSCache，并且指定每个连接上 PSCache 的大小(druid 默认配置就是有这些)
+      # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+      # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的 filters，去掉后台监控页面 sql 无法统计，'wall' 用于防火墙，注意，这里有一个坑，貌似 log4j 被移除了吧，或者升级成其他了，日志放面，反正配置上去了，直接报错
+      # 证明了，是升级了，直接使用了 log4j2，而不是 log4j，因此呢，使用以前的配置的话，会找不到报错的
+      # 不过教程中不使用 log4j 的，这里自己加上去的
+      filters: stat, wall, log4j2
+      # 通过 connectProperties 属性来打开 mergeSql 功能; 慢 SQL 记录
+      connection-properties: druid.stat.mergeSql=true; druid.stat.slowSqlMillis=5000
+      # 个人理解，大概就是检测上面配置实际执行的类，这里不用默认的，直接使用自己指定的
+      valid-connection-checker-class-name: com.alibaba.druid.pool.vendor.MSSQLValidConnectionChecker
+      # 看 review_boot 中的 review_mybatis 项目，相当于完成了 servletRegistrationBean 方法中的东西
+      stat-view-servlet:
+        url-pattern: /druid/*
+        login-username: guest
+        login-password: guest
+        # 注意，新版的 druid，想要 web 管理的话，必须要开启这个，默认是 false 的
+        enabled: true
+      # 这个并没有被 ioc 容器管理，而是 FilterRegistrationBean 给注册了，但没有被管理，看 DruidDataSourceAutoConfigure 就是可以知道了
+      # 还有，在 druid 和 spring 国外的不同，国内喜欢 /* 的，但是呢，国外是喜欢 /** 的，因此呢，需要更改一下，不，应该不能够说是国内吧，应该说，spring 喜欢 /**，druid 喜欢 /* 吧
+      # 同时呢，配置了这个，相当于那个项目中的 servletServletRegistrationBean 方法的配置了
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js, *.gif, *.jpg, *.png, *.css, *.ico, /druid/**"
+      # 个人猜测呢，是和 connection-properties 中的配置是一样的，但是呢，现在就先不管了
+      # filter:
+      #  stat:
+      #    merge-sql: true
+      #    slow-sql-millis: 5000
+  # 这个是必须的，因为呢，boot 2.6 以后的版本和 swagger 3.0 版本貌似不太融洽，会启动的时候出现 'documentXXXX' 异常的，这个是解决方式
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# mybatis 相关配置
+mybatis:
+  type-aliases-package: org.aliuselly.blog_demo.entity
+
+
+
+
