@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aliuselly 个人博客后台</title>
+
+<!--    styles-->
+    <!--    bootstrap styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--    fontAwesome styles-->
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--    morris chart style-->
+    <link href="assets/css/morris-0.4.3.min.css" rel="stylesheet">
+    <!--    custom style-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet">
+    <!--    google font-->
+    <link href="assets/css/google-font.css" rel="stylesheet">
+    <!--    table style-->
+    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <style>
+        label {
+            margin-top: 5px;
+        }
+    </style>
+
+<!--    js-->
+<!--    jquery-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+<!--    bootstrap-->
+    <script src="assets/js/bootstrap.min.js"></script>
+<!--    metis menu-->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+<!--    morris chart-->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+<!--    <script src="assets/js/morris/morris.min.js"></script>-->
+<!--    data table-->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<!--    custom-->
+<!--    <script src="assets/js/custom-scripts.js"></script>-->
+<!--    vue-->
+    <script src="assets/js/vue/vue.min.js"></script>
+    <script src="assets/js/vue/vue-axios.min.js"></script>
+    <script src="assets/js/vue/vue-vuex3.js"></script>
+<!--    引入自己的 js-->
+    <script src="assets/js/page/category.js"></script>
+    <script src="assets/js/page/metaDataTable.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">aliuselly</a>
+            </div>
+        </nav>
+<!--        NAV TOP-->
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="index.html"><i class="fa fa-bar-chart-o"> 数据统计</i></a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="category.html"><i class="fa fa-bars"></i> 分类管理</a>
+                    </li>
+                    <li>
+                        <a href="article.html"><i class="fa fa-file-text-o"></i> 博文管理</a>
+                    </li>
+                    <li>
+                        <a href="comment.html"><i class="fa fa-envelope"></i> 评论管理</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!--        NAV SIDE-->
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            分类管理
+                            <small>Category of my blog</small>
+                        </h1>
+                    </div>
+                </div>
+<!--                ROW-->
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default text-left no-boder">
+                            <div class="panel-heading">
+                                分类管理
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTable-categories">
+                                        <thead>
+                                            <tr>
+                                                <th>分类 ID</th>
+                                                <th>分类名称</th>
+                                                <th>文章数量</th>
+                                                <th>创建时间</th>
+                                                <th>修改时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody-categories">
+                                            <tr v-for="category in categories" is="category-data" v-bind:key="category.id" v-bind:get-category="category"></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                ROW-->
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                新增分类
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group categoryForm" id="addDiv">
+                                    <label>分类名称：</label>
+                                    <input class="form-control" name="name" id="addName" v-model="categoryName">
+                                    <p class="help-block">注意：请不要重复填写分类名称！</p>
+                                    <div class="text-center">
+                                        <button class="btn btn-success" id="addCategoryBtn" v-on:click="addCategory">
+                                            <i class="fa fa-edit"></i> 确认添加
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary no-boder">
+                            <div class="panel-heading">
+                                修改分类
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group categoryForm" id="selectDiv">
+                                    <label>分类名称：</label>
+                                    <select class="form-control" id="select-category" v-model="selectCategory" v-on:change="changeCategory($event)">
+                                        <option v-for="category in categories" v-bind:key="category.id" v-text="category.name" v-bind:categoryId="category.id"></option>
+                                    </select>
+                                    <label>修改名称：</label>
+                                    <input class="form-control" name="name" id="updateName" v-bind:value="selectCategory" v-on:change="inputOver">
+                                    <p class="help-block">注意：请不要重复填写分类名称！</p>
+                                    <div class="text-center">
+                                        <button id="updateCategoryBtn" class="btn btn-default" v-on:click="updateCategory">
+                                            <i class="fa fa-refresh"></i> 确认更新
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                END ROW-->
+
+                <footer>
+                    <p>Copyright &copy; 2022.Company name.aliuselly</p>
+                </footer>
+            </div>
+<!--            PAGE INNER-->
+        </div>
+<!--        PAGE WRAPPER-->
+    </div>
+<!--WRAPPER-->
+
+<!--    modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header alert-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">警告信息</h4>
+                </div>
+                <div class="modal-body">
+                    请确认是否删除！
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="confirmBtn" class="btn btn-danger" data-dismiss="modal" v-on:click="sendDelete">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let store = new Vuex.Store({
+            state: {
+                categories: []
+            },
+            mutations: {
+                change(state, payload) {
+                    state.categories = payload.amount;
+                },
+                delete(state, payload) {
+                    state.categories = state.categories.filter(function (category) {
+                        return category.id != payload.amount;
+                    });
+                }
+            },
+            getters: {
+                getCategories(state) {
+                    return state.categories;
+                }
+            },
+            actions: {
+                changeCategory(context, payload) {
+                    context.commit('change', payload);
+                },
+                deleteCategory(context, payload) {
+                    context.commit('delete', payload);
+                }
+            }
+        });
+
+        let eventBus = new Vue({
+            data: {
+                tmpId: 0
+            }
+        });
+
+        new Vue({
+            el: '#tbody-categories',
+            data: {
+                categories: []
+            },
+            mounted() {
+                axios
+                    .get('http://localhost:8080/api/category/list', {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => {
+                        this.categories = response.data;
+                        // vuex 存储数据
+                        store.dispatch('changeCategory', {
+                            amount: this.categories
+                        });
+                        // 给 select 那边填充数据，注意，必须要在 vuex 存储完成之后，不然会报错读取不到
+                        eventBus.$emit('dataReady');
+
+                        this.$nextTick(() => {
+                            $('#dataTable-categories').DataTable(dataTableMeta);
+                        });
+                    })
+                    .catch(err => console.log(err));
+
+                eventBus.$on('deleteArray', function(categoryId) {
+                    // 不知道为啥就删除成功了，在 jq 的 data 里边，如果不行，就加个 id 在标签，然后，row 函数中写上相应 id
+                    // 不过呢，是删除首个的，如果不写 row 中的数据
+                    $('#dataTable-categories').DataTable().row('#categoryTr' + categoryId).remove().draw();
+                }.bind(this));
+            }
+        });
+
+        new Vue({
+            el: '#confirmBtn',
+            methods: {
+                sendDelete: function() {
+                    eventBus.$emit('deleteEx', eventBus.tmpId);
+                }
+            }
+        });
+
+        Vue.component('category-data', {
+            template: '<tr v-bind:id="dataId">' +
+                '<td>{{ getCategory.id }}</td>' +
+                '<td>{{ getCategory.name }}</td>' +
+                '<td>{{ getCategory.number }}</td>' +
+                '<td>{{ getCategory.createBy }}</td>' +
+                '<td>{{ getCategory.modifiedBy }}</td>' +
+                '<td><button class="btn btn-danger deleteBtn" v-on:click="deleteCategory(getCategory.id)"><i class="fa fa-trash-o"></i> 删除</button></td>' +
+                '</tr>',
+            props: {
+                getCategory: {
+                    type: Object,
+                    default: {}
+                }
+            },
+            data() {
+                return {
+                    cgId: 0,
+                    dataId: 'categoryTr' + this.getCategory.id
+                }
+            },
+            methods: {
+                deleteCategory: function(categoryId) {
+                    $('#myModal').modal();
+                    this.cgId = categoryId;
+                    eventBus.tmpId = categoryId;
+                }
+            },
+            mounted() {
+                eventBus.$on('deleteEx', function(tmpId) {
+                    // 对哦，这个 tmpId 不能少，因为呢，人家的 emit 消息会全部触发一遍的
+                    if (tmpId != this.cgId)
+                    {
+                        return;
+                    }
+                    axios
+                        .delete('http://localhost:8080/admin/category/' + this.cgId)
+                        .then(response => {
+                            console.log(response);
+                            store.dispatch('deleteCategory', {
+                                amount: this.cgId
+                            });
+                            // 注意啊，你还要去到 select 那边进行更新数据的
+                            eventBus.$emit('dataReady');
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert("删除失败！");
+                        });
+                    // 这样自欺欺人，使用 v-show dataTable 的数据不会变化，虽然效果一样，但是，没有那么真
+                    // this.isShow = false;
+                    eventBus.$emit('deleteArray', this.cgId);
+                }.bind(this));
+            }
+        });
+
+        new Vue({
+            el: '#addDiv',
+            data: {
+                categoryName: ''
+            },
+            methods: {
+                addCategory: function() {
+                    axios
+                        .post('http://localhost:8080/admin/category', {
+                            name: this.categoryName
+                        })
+                        .then(response => {
+                            console.log(response)
+                            alert("添加分类成功！");
+                            // 个人觉得，不必要了，不刷新的情况下去更新 dataTable，因为呢，如何获取 id 呢，id 不正确会影响到后续的操作，同时，时间也不正确啥的
+                            location.reload();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert("添加分类失败！");
+                        })
+                }
+            }
+        });
+
+        /*
+        let addInput = new Vue({
+            el: '#addName',
+            data: {
+                categoryName: ''
+            }
+        });
+        */
+        /*
+        // 貌似 v-model 只能对同级的进行操作的，如果是同级的下一级，那么就无效了
+        new Vue({
+            el: '#addCategoryBtn',
+            methods: {
+                addCategory: function() {
+                    axios
+                        .post('http://localhost:8080/admin/category', {
+                            name: addInput.categoryName
+                        })
+                        .then(response => {
+                            console.log(response)
+                            alert("添加分类成功！");
+                            // 个人觉得，不必要了，不刷新的情况下去更新 dataTable，因为呢，如何获取 id 呢，id 不正确会影响到后续的操作，同时，时间也不正确啥的
+                            location.reload();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert("添加分类失败！");
+                        })
+                }
+            }
+        });
+        */
+
+        /*
+        * 同时，这里我一开始犯了一个错误
+        * 一开始呢，我使用了这个 selectDiv 组件中的两个组件，即 select button 两个单独来
+        * 然后在 select 中使用 v-model，结果报错了，错误信息就是，另外一边的那个属性还没有定义
+        * 然后，代码中又有，所以，这个就涉及到了对象初始化的先后顺序的问题了
+        * 因此呢，不如直接在一个中解决，还不用进行传值，上面就是可以这样的
+        * */
+        new Vue({
+            el: '#selectDiv',
+            data: {
+                categories: [],
+                // 注意，这里就像普通的对象的，如果是 selectCategory: this.categories[0].name 是不行的
+                // 因为，对象需要进行初始化，你一开始就指定人家，人家还没有初始化，没定义，就会报错了，因此呢
+                // 如果想要进行赋值的话，可以去到 mounted 已经加载完成后才进行赋值
+                selectCategory: '',
+                sendId: 0,
+                sendName: ''
+            },
+            methods: {
+                inputOver: function(event) {
+                    // console.log(event.target.value)
+                    // 注意，input 事件和 change 事件获取值的方式是一样的，只不过
+                    // input 会每输入一次就会调用一次，而 change 是等你输入完，即离开组件的那一刻
+                    this.sendName = event.target.value;
+                },
+                changeCategory: function(event) {
+                    // 这个是上面绑定了 v-bind:value 才能获取的，同时使用 v-text 显示名字的
+                    // 等会，我们并不需要在这里获取 name，而是 input 中
+                    // console.log(event.target.value);
+                    // 两种选一个即可
+                    // console.log(event.target.selectedOptions[0].attributes.getNamedItem('categoryId').value);
+                    // console.log(event.target.selectedOptions[0].attributes.categoryId.value);
+                    // this.sendId = event.target.selectedOptions[0].attributes.getNamedItem('categoryId').value;
+                    // this.sendId = event.target.value;
+                    // 干，从这里才知道，v-text 绑定的是 <option>this</option> 中的，
+                    // 但是 v-bind:value 指向的正好是这个标签中值，因此，v-model 中获取到的值正好就是 value 的值，
+                    // 因此，这里不能进行设置 v-bind:value 不然会影响到 v-model 的默认选中，因为 v-model 也是要 value 的
+                    // console.log(event.target.value);
+                    this.sendId = event.target.selectedOptions[0].attributes.getNamedItem('categoryId').value;
+                },
+                updateCategory: function() {
+                    axios
+                        .put('http://localhost:8080/admin/category/' + this.sendId, {
+                            name: this.sendName
+                        })
+                        .then(response => {
+                            console.log(response);
+                            // 回到顶部，但是，感觉没意义，因为，如果要修改数据的话
+                            // 要修改的数据可多了，比如 input 中的，select 中的，还有 dataTable 中的 name date
+                            // 所以，不如，重新加载
+                            // window.scrollTo(0, 0);
+                            alert('更新分类名称完成！');
+                            location.reload();
+                        })
+                        .catch(err => {
+                            console.log(err)
+                            alert('更新分类名称失败！');
+                        });
+                }
+            },
+            mounted() {
+                // this.categories = store.getters.getCategories;
+                // 没办法了，一开始的设计缺陷，现在如果想要优雅的话，必须推到重来
+                // 这个 vuex 还是才了解的，只能够让其停止两秒
+                // 为啥呢，因为，大家都是 new 的，如果这个组件先了，那么必然获取不到，因为，要上面的请求，再给到 vuex 中
+                // 但是，如果他先出来了，上面请求的组件还没 new，必然找不到，报错
+                // 所以，这里通过 setTimeout 方法，让其超时两秒再执行，就能获取到数据了，如果请求数据超过两秒，那么 G
+                /*setTimeout(() => {
+                    this.categories = store.getters.getCategories;
+                    this.sendId = this.categories[0].id;
+                    this.selectCategory = this.categories[0].name;
+                    }, 2000);*/
+
+                // 上面的方法太蠢了，所以换个方式
+                eventBus.$on('dataReady', function() {
+                    this.categories = store.getters.getCategories;
+                    this.sendId = this.categories[0].id;
+                    this.selectCategory = this.categories[0].name;
+                }.bind(this));
+                /*
+                axios
+                    .get('http://localhost:8080/api/category/list', {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => {
+                        this.categories = response.data;
+                        // 这里 id 也要设置下，因为呢，如果人家不选，就默认呢，那么 url 提交的 id 就是 0 了
+                        this.sendId = this.categories[0].id;
+                        this.selectCategory = this.categories[0].name;
+                    })
+                    .catch(err => console.log(err));
+
+                 */
+            }
+        });
+    </script>
+</body>
+</html>

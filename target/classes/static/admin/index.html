@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+<!--    这里是做移动设备的适配的，因为呢，浏览器解析数据的时候，会查看 meta 的-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aliuselly 个人博客后台</title>
+<!--    bootstrap styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+<!--    这里就不要使用本地的了，直接请求别人的吧，因为呢，里边貌似还有其他的请求的-->
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<!--    <link href="assets/css/font-awesome.min.css" rel="stylesheet">-->
+<!--    morris chart style-->
+    <link href="assets/css/morris-0.4.3.min.css" rel="stylesheet">
+<!--    custom style-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet">
+<!--    google font-->
+    <link href="assets/css/google-font.css" rel="stylesheet">
+<!--    table style-->
+<!--    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet">-->
+    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<!--    js script-->
+<!--    jquery js-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+<!--    bootstrap js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+<!--    metis Menu js-->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+<!--    data table js-->
+<!--    <script src="assets/js/dataTables/jquery.dataTables.js"></script>-->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<!--    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>-->
+<!--    vue js-->
+    <script src="assets/js/vue/vue.min.js"></script>
+    <script src="assets/js/vue/vue-axios.min.js"></script>
+<!--    引自己的 js-->
+    <script src="assets/js/page/index.js"></script>
+    <script src="assets/js/page/metaDataTable.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">aliuselly</a>
+            </div>
+        </nav>
+<!--        NAV TOP-->
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+<!--                        i 斜体标签-->
+                        <a class="active-menu" href="index.html"><i class="fa fa-bar-chart-o"> 数据统计</i></a>
+                    </li>
+                    <li>
+                        <a href="category.html"><i class="fa fa-bars"> 分类管理</i></a>
+                    </li>
+                    <li>
+                        <a href="article.html"><i class="fa fa-file-text-o"> 博文管理</i></a>
+                    </li>
+                    <li>
+                        <a href="comment.html"><i class="fa fa-envelope"> 评论管理</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!--        NAV SIDE-->
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            数据统计
+<!--                            小号字体标签-->
+                            <small>Summary of my blog</small>
+                        </h1>
+                    </div>
+                </div>
+<!--                ROW-->
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-green">
+                            <div class="panel-body">
+                                <i class="fa fa-bar-chart-o fa-5x"></i>
+                                <div id="count-visits">
+<!--                                    这里 props 的时候呢，bind 这里的最好不要驼峰写法，换分隔或者下划，到了 js 中才驼峰，不然很难进行识别的 vue-->
+                                    <div-h3 v-bind:get-path="setPath"></div-h3>
+                                </div>
+<!--                                使用 vue 必须这么写进行捕获模板-->
+<!--                                <h3 id="count-visits"> {{ vcount }} </h3>-->
+                            </div>
+                            <div class="panel-footer back-footer-green">
+                                Visits
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-blue">
+                            <div class="panel-body">
+                                <i class="fa fa-code fa-5x"></i>
+                                <div id="count-logs">
+                                    <div-h3 v-bind:get-path="setPath"></div-h3>
+                                </div>
+                            </div>
+                            <div class="panel-footer back-footer-blue">
+                                Logs
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa-comment fa-5x"></i>
+                                <div id="count-comments">
+                                    <div-h3 v-bind:get-path="setPath"></div-h3>
+                                </div>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                Comments
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">浏览量统计</div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-visits">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>访问 IP</th>
+                                                <th>访问时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody-visits">
+<!--                                            <tbody-tdata v-for="visit in visits" v-bind:visit="visits"></tbody-tdata>-->
+                                            <tr v-for="visit in visits" is="visit-data" v-bind:key="visit.id" v-bind:get-visit="visit">
+<!--                                                <td>{{ visit.id }}</td>-->
+<!--                                                <td>{{ visit.ip }}</td>-->
+<!--                                                <td>{{ visit.createBy }}</td>-->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">日志统计</div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-logs">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>访问 IP</th>
+                                                <th>访问时间</th>
+                                                <th>操作内容</th>
+                                                <th>访问 Url</th>
+                                                <th>客户端信息</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody-logs">
+                                            <tr v-for="log in logs" is="log-data" v-bind:key="log.id" v-bind:get-log="log"></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">留言统计</div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-comments">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>留言内容</th>
+                                            <th>留言时间</th>
+                                            <th>用户名称</th>
+                                            <th>邮箱</th>
+                                            <th>IP 地址</th>
+                                            <th>是否有效</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbody-comments">
+                                            <tr v-for="comment in comments" is="comment-data" v-bind:key="comment.id" v-bind:get-comment="comment"></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                END ROW-->
+                <footer>
+                    <p>Copyright &copy; 2022.Company name.aliuselly</p>
+                </footer>
+            </div>
+<!--            PAGE INNER-->
+        </div>
+<!--        PAGE WRAPPER-->
+    </div>
+<!--WRAPPER-->
+
+<!--    Modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header alert-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">警告信息</h4>
+                </div>
+                <div class="modal-body">
+                    请确认是否删除！
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="confirmBtn" class="btn btn-danger" data-dismiss="modal" v-on:click="sendDelete">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--END MODAL-->
+
+<script>
+    new Vue({
+        el: '#count-visits',
+        // 如果是 components 则是对象形式写法 {xx:bb}，这样是字符串写法
+        component: ['DivH3'],
+        // 这里使用 data: data() 都行的
+        data: {
+            setPath: '/admin/sys/view'
+        }
+    });
+
+    new Vue({
+        el: '#count-logs',
+        component: ['DivH3'],
+        data: {
+            setPath: '/admin/sys/log'
+        }
+    });
+
+    new Vue({
+        el: '#count-comments',
+        component: ['DivH3'],
+        data: {
+            setPath: '/api/comment/list'
+        }
+    });
+
+    new Vue({
+        el: '#tbody-visits',
+        // 貌似对于 v-for 来说，使用 v-for 与子组件结合，是不需要 component 的了，直接在要循环的标签上写 is='子组件标签名即可'
+        // component: ['TrData'],
+        data: {
+            visits: []
+        },
+        mounted() {
+            axios
+                .get('http://localhost:8080/admin/sys/view', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                })
+                .then(response => {
+                    this.visits = response.data;
+                    this.$nextTick(() => {
+                        // $('#dataTables-visits').DataTable({});
+                        $('#dataTables-visits').DataTable(dataTableMeta);
+                    });
+                })
+                .catch(err => console.log(err));
+        }
+    });
+
+    new Vue({
+        el: '#tbody-logs',
+        data: {
+            logs: []
+        },
+        mounted() {
+            axios
+                .get('http://localhost:8080/admin/sys/log', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                })
+                .then(response => {
+                    this.logs = response.data
+                    this.$nextTick(() => {
+                        $('#dataTables-logs').DataTable(dataTableMeta);
+                    });
+                })
+                .catch(err => console.log(err));
+        }
+    });
+
+    // 由于在 js 中，new 的时候，貌似要在当前 html 页面的，同时呢，这里也无法使用 export 宣告出去，因此，只能将 template 移动过来了
+    let eventBus = new Vue({
+        data: {
+            // 通过这里保持 event 事件的一致
+            tmpId: 0
+        }
+    });
+
+    new Vue({
+        el: '#confirmBtn',
+        methods: {
+            sendDelete: function() {
+                // console.log('deleteEx' + eventBus.tmpId);
+                eventBus.$emit('deleteEx', eventBus.tmpId);
+            }
+        }
+    });
+
+    new Vue({
+        el: '#tbody-comments',
+        data: {
+            comments: []
+        },
+        mounted() {
+            axios
+                .get('http://localhost:8080/api/comment/list', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                })
+                .then(response => {
+                    this.comments = response.data
+                    this.$nextTick(() => {
+                        $('#dataTables-comments').DataTable(dataTableMeta);
+                    });
+                })
+                .catch(err => console.log(err));
+        }
+    });
+
+    Vue.component('comment-data', {
+        template: '<tr>' +
+            '<td>{{ getComment.id }}</td>' +
+            '<td>{{ getComment.content }}</td>' +
+            '<td>{{ getComment.createBy }}</td>' +
+            '<td>{{ getComment.name }}</td>' +
+            '<td>{{ getComment.email }}</td>' +
+            '<td>{{ getComment.ip }}</td>' +
+            // 原来如此，这个 class 里边要写成 {} 的，后面才是 vue 要判断的，但是呢，要引用的 class 要用引号括起来，同时呢，style 才是键值写法，class 是定义好的 style
+            '<td v-bind:class="{\'bg-color-red\': isActive}">{{ getComment.isEffective }}</td>' +
+            '<td><button class="btn btn-danger" v-on:click="deleteComment(getComment.id)"><i class="fa fa-trash-o"></i> 删除</button></td>' +
+            '</tr>',
+        props: {
+            getComment: {
+                type: Object,
+                default: {}
+            }
+        },
+        data() {
+            return {
+                // 这样就能够保证，刷新的时候样式不会丢失了，思考默认状态是 true 的，因为数据库默认就是有效的
+                isActive: !this.getComment.isEffective,
+                cId: 0
+            }
+        },
+        methods: {
+            deleteComment: function (commentId) {
+                // let my = this;
+                // 这个无法使用 vue 代替，使用 jq 吧
+                $('#myModal').modal();
+                // myModal.modal();
+                this.cId = commentId;
+                // 保证事件的唯一
+                eventBus.tmpId = commentId;
+                // console.log(eventBus.tmpId + '---' + 'cId: ' + this.cId);
+
+                /*
+                $('#confirmBtn').click(function () {
+                    axios
+                        .delete('http://localhost:8080/admin/comment/' + commentId)
+                        .then(response => {
+                            // 由于 vue 和 jq 是不同的，因此呢，在 jq 使用 this 是 jq，而不是 vue 的
+                            my.getComment.isEffective = false;
+                            my.isActive = true;
+                            console.log(response.data);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert("删除失败！");
+                        });
+                });
+                 */
+                // 不用刷新页面，下面的方式都是可以的，不过呢，这里不是数组，父组件那边才是数组，这里是对象，因此下面那种是不对的
+                // this.$set(this.getComment, 'isEffective', false);  // 也是可以的
+                // this.getComment.isEffective = false;
+                // console.log(this.getComment);
+                // 都不成功，想着不刷新整个页面的，就是直接更新
+                // this.$set(this.getComment[commentId - 1], 'isEffective', 0);
+                // this.getComment[commentId - 1].isEffective = 0;
+                // 刷新页面
+                // location.reload();
+            }
+        },
+        mounted() {
+            // 这里使用了非父子组件的通信方法，具体看 aaa.html 吧
+            eventBus.$on('deleteEx', function(tmpId) {
+                // console.log('on--deleteEx' + this.cId);
+                // 通过参数来比较判断，是否为相同的，才进行触发事件
+                /*
+                * 注意，使用非父子通信的话，有个大坑
+                * 首先，发布的时候呢，是事件名可以变化的，即 event.$emit(xxx + parm); 是可以的
+                * 但是呢，接收事件的时候呢，是不可以的，是无法进行接收的，如 event.$on(xxx + parm) 是不可以的
+                * 接收不了事件，因此呢，这里通过参数判断来解决
+                *
+                * 至于为什么需要这个参数
+                * 因为，这里是 for 循环列表的，那么每一个 td 标签下，都有一个 deleteEx 的事件，那么点击所有都会触发的
+                * 但是呢，我们这里的逻辑都是，点击删除按钮的时候就开始确认信息了，赋值好了
+                * 但是呢，点击确认的时候呢，才触发 deleteEx event 的，所以呢，会导致只有当前的列的删除成功
+                * 但是呢，其他列的也会进行触发事件，但，没有删除按钮的方法赋值，会导致他们使用默认值去请求的，即 0 或者 undefined
+                * 然后呢，会导致请求错误，触发 axios 的 catch 路径里面去
+                *
+                * 之前只有一条数据，没有发现，多条数据才知道的
+                * */
+                if (tmpId != this.cId)
+                {
+                    return;
+                }
+                axios
+                    .delete('http://localhost:8080/admin/comment/' + this.cId)
+                    .then(response => {
+                        // 由于 vue 和 jq 是不同的，因此呢，在 jq 使用 this 是 jq，而不是 vue 的
+                        this.getComment.isEffective = false;
+                        this.isActive = true;
+                        console.log(response.data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert("删除失败！");
+                    });
+            }.bind(this));
+        }
+    });
+</script>
+</body>
+</html>

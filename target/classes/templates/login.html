@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link href="../css/lrtk.css" rel="stylesheet">
+    <script src="../js/vue/vue.min.js"></script>
+    <script src="../js/jquery/jquery.min.js"></script>
+    <!--
+    用于测试
+    <style type="text/css">
+        .test
+        {
+            font-size: large;
+            color: red;
+        }
+    </style>-->
+</head>
+<body>
+    <div id="login">
+        <div class="wrapper">
+            <div class="login" align="center">
+                <form id="form" action="/admin/login" method="post" class="controls loginform">
+                    <div id="owl-login" v-bind:class="{password: isActive}">
+                        <div class="hand"></div>
+                        <div class="hand hand-r"></div>
+                        <div class="arms">
+                            <div class="arm"></div>
+                            <div class="arm arm-r"></div>
+                        </div>
+                    </div>
+                    <div class="pad">
+                        <div class="control-group">
+                            <div class="controls">
+                                <label for="username" class="control-label fa-user"></label>
+                                <input id="username" name="username" placeholder="username" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <label for="password" class="control-label fa fa-asterisk"></label>
+                                <input v-on:focus="open" v-on:blur="close" id="password" type="password" name="password" placeholder="Password" tabindex="2" class="form-control input-medium">
+                            </div>
+                        </div>
+                        <p style="color: red" th:text="${msg}"></p>
+                    </div>
+                    <div class="form-actions">
+                        <a th:href="@{/index}" class="btn pull-left btn-link">博客页</a>
+                        <button id="submitBtn" tabindex="4" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--        使用 vue 实现了-->
+<!--        <script src="../js/jquery/jquery.min.js"></script>-->
+        <script>
+            let elChange = new Vue({
+                el: '#owl-login',
+                data: {
+                    isActive: false
+                }
+            });
+
+            new Vue({
+                el: '#password',
+                data: {
+                    isActive: false
+                },
+                methods: {
+                    open: function (event)
+                    {
+                        elChange.isActive = this.isActive = !this.isActive;
+                    },
+                    close: function (event)
+                    {
+                        elChange.isActive = this.isActive = !this.isActive;
+                    }
+                }
+            });
+            /*
+            $(function () {
+                // 意思就是，找到 id 为 login 中的 id 为 password 的组建，当其有焦点的时候，加上这个样式
+                // 当没有焦点了(blur)就移除事件
+                $('#login #password').focus(function () {
+                    $('#owl-login').addClass('password');
+                }).blur(function () {
+                    $('#owl-login').removeClass('password');
+                });
+            });
+            */
+        </script>
+    </div>
+</body>
+</html>

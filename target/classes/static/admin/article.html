@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aliuselly 个人博客后台</title>
+
+<!--    styles-->
+    <!--    bootstrap styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--    fontAwesome styles-->
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<!--    <link href="assets/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--    morris chart style-->
+    <link href="assets/css/morris-0.4.3.min.css" rel="stylesheet">
+    <!--    custom style-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet">
+    <!--    google font-->
+    <link href="assets/css/google-font.css" rel="stylesheet">
+    <!--    table style-->
+    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<!--    <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet">-->
+
+    <style>
+        label {
+            margin-top: 5px;
+        }
+    </style>
+
+<!--    js-->
+    <!--    jquery-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--    bootstrap-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--    metis menu-->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!--    morris chart-->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <!--    data table-->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<!--    <script src="assets/js/dataTables/jquery.dataTables.min.js"></script>-->
+    <!--    vue-->
+    <script src="assets/js/vue/vue.min.js"></script>
+    <script src="assets/js/vue/vue-axios.min.js"></script>
+    <script src="assets/js/vue/vue-vuex3.js"></script>
+    <!--    引入自己的 js-->
+    <script src="assets/js/page/article.js"></script>
+    <script src="assets/js/page/metaDataTable.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">aliuselly</a>
+        </div>
+    </nav>
+<!--NAV TOP-->
+
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <a href="index.html"><i class="fa fa-bar-chart-o"></i> 数据统计</a>
+                </li>
+                <li>
+                    <a href="category.html"><i class="fa fa-bars"></i> 分类管理</a>
+                </li>
+                <li>
+                    <a class="active-menu" href="article.html"><i class="fa fa-file-text-o"></i> 博文管理</a>
+                </li>
+                <li>
+                    <a href="comment.html"><i class="fa fa-envelope"></i> 评论管理</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!--NAV SIDE-->
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        博文管理
+                        <small>Article of my blog</small>
+                    </h1>
+                </div>
+            </div>
+<!--            ROW-->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            博文列表
+                        </div>
+                        <div class="panel-body">
+                            <label>博文分类：</label>
+                            <span id="articleCategories">
+                                <select-category v-bind:select-id="setSelectId" v-bind:categories="setCategories"></select-category>
+                            </span>
+                            <br>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTable-articles">
+                                    <thead>
+                                        <tr>
+                                            <th>文章 ID</th>
+                                            <th>文章名称</th>
+                                            <th>是否置顶</th>
+                                            <th>阅读量</th>
+                                            <th>题图</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-articles">
+<!--                                    通过 [] 的方式实现拼接-->
+                                        <tr v-for="article in showArticle" v-bind:key="article.id" v-bind:id="['tableTd' + article.id]">
+                                            <td>{{ article.id }}</td>
+                                            <td>{{ article.title }}</td>
+                                            <td>{{ article.isTop }}</td>
+                                            <td>{{ article.traffic }}</td>
+                                            <td><a v-bind:href="article.pictureUrl">点击这里</a></td>
+                                            <td>
+                                                <button class="btn btn-success" v-on:click="updateArticle(article.id)">
+                                                    <i class="fa fa-edit"></i> 编辑
+                                                </button>
+                                                <button class="btn btn-danger" v-on:click="deleteArticle(article.id)">
+                                                    <i class="fa fa-trash-o"></i> 删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            END ROW-->
+
+            <div class="row" id="addArticleRow">
+                <div class="col-md-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            新增博文
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>文章标题：</label>
+                                    <input class="form-control" id="addArticleTitle" v-model="titleData">
+                                </div>
+                            </div>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>文章简介：</label>
+                                </div>
+                            </div>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea id="addArticleSummary" class="form-control" rows="2" v-model="summaryData"></textarea>
+                                </div>
+                            </div>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label>是否置顶：</label>
+                                    <input type="checkbox" id="addArticleTop" v-model="isTopData">
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <label>文章分类：</label>
+                                    <span id="addCategories">
+                                        <select-category v-bind:select-id="setSelectId" v-bind:categories="setCategories"></select-category>
+                                    </span>
+<!--                                    <select id="addCategories"></select>-->
+                                </div>
+                            </div>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>文章题图：</label>
+                                    <input class="form-control" id="addArticlePicture" v-model="pictureData">
+                                </div>
+                            </div>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>文章内容：</label>
+                                    <textarea id="addArticleContent" class="form-control" rows="12" v-model="contentData"></textarea>
+                                </div>
+                            </div>
+                            <br>
+<!--                            END ROW-->
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4 text-center">
+                                    <button id="addArticleBtn" class="form-control btn btn-success" v-on:click="addArticle">
+                                        确认添加
+                                    </button>
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+<!--                            END ROW-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            END ROW-->
+            <footer>
+                <p>Copyright &copy; 2022.Company name.aliuselly</p>
+            </footer>
+        </div>
+<!--        PAGE INNER-->
+    </div>
+<!--    PAGE WRAPPER-->
+</div>
+<!--WRAPPER-->
+
+<!--Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header alert-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">警告信息</h4>
+            </div>
+            <div class="modal-body">
+                请确认是否删除！
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="confirmBtn" class="btn btn-danger" data-dismiss="modal" v-on:click="deleteArticle">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END MODAL-->
+
+<!--MODAL-->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header alert-success">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">更新文章</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>文章标题：</label>
+<!--                        注意，这么写法不推荐啊，因为，修改 store 最好的方式就是 action commit 的，这里是为了方便直接修改 store 里边的值了，但不建议-->
+                        <input class="form-control" id="articleTitle" v-model="showArticleDto.title">
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>文章简介：</label>
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea id="articleSummary" class="form-control" rows="2" v-model="showArticleDto.summary"></textarea>
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <label>是否置顶：</label>
+                        <input type="checkbox" id="articleTop" v-model="showArticleDto.isTop">
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <label>文章分类：</label>
+                        <span>
+                            <select-category v-bind:select-id="setSelectId" v-bind:categories="setCategories"></select-category>
+                        </span>
+<!--                        <select id="updateCategories"></select>-->
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>文章题图：</label>
+                        <input class="form-control" id="articlePicture" v-model="showArticleDto.pictureUrl">
+                    </div>
+                </div>
+<!--                END ROW-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>文章内容：</label>
+                        <textarea id="articleContent" class="form-control" rows="12" v-model="showArticleDto.content"></textarea>
+                    </div>
+                </div>
+<!--                END ROW-->
+            </div>
+<!--            modal body-->
+            <div class="modal-footer">
+                <button type="button" id="updateBtn" class="btn btn-success" data-dismiss="modal" v-on:click="confirmUpdateArticle">确认更新</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END MODAL-->
+
+<script>
+    let store = new Vuex.Store({
+        state: {
+            // 对应后端的分类对象
+            categories: [],
+            // 对应后端的 ArticleWithPicture 对象
+            articleCategories: [],
+            // 对应后端的 ArticleDto 对象
+            article: {}
+        },
+        mutations: {
+            change(state, payload) {
+                state.categories = payload.amount;
+                // 注意，由于服务器的数据是没有的，因此呢，这里添加一个用于获取所有文章数据的分类
+                // 当然 unshift 是用于在头部进行添加的
+                state.categories.unshift({
+                    id: -1,
+                    name: '全部'
+                });
+            },
+            changeArticleCategory(state, payload) {
+                state.articleCategories = payload.amount;
+            },
+            deleteArticle(state, payload) {
+                state.articleCategories = state.articleCategories.filter(function (article) {
+                    return article.id != payload.amount;
+                });
+            },
+            changeArticle(state, payload) {
+                state.article = payload.amount;
+            }
+        },
+        getters: {
+            getCategories(state) {
+                return state.categories;
+            },
+            getArticleCategory(state) {
+                return state.articleCategories;
+            },
+            getArticle(state) {
+                return state.article;
+            }
+        },
+        actions: {
+            changeCategories(context, payload) {
+                context.commit('change', payload);
+            },
+            changeArticleCategory(context, payload) {
+                context.commit('changeArticleCategory', payload);
+            },
+            deleteArticle(context, payload) {
+                context.commit('deleteArticle', payload);
+            },
+            changeArticle(context, payload) {
+                context.commit('changeArticle', payload);
+            }
+        }
+    });
+
+    let eventBus = new Vue({
+        data: {
+            tempDeleteId: 0
+        }
+    });
+
+    // 最好别用 wrapper 的方式，因为呢，那么页面的全部数据都要来自 wrapper 的
+    // 而现在对于组件化的方式使用还不太熟悉，所以，先别，先一个一个组件的方式来
+    new Vue({
+        el: "#articleCategories",
+        component: ['selectCategory'],
+        data: {
+            setCategories: [],
+            setSelectId: 'queryCategory'
+        },
+        mounted() {
+            axios
+                .get('http://localhost:8080/api/category/list', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                })
+                .then(response => {
+                    this.setCategories = response.data;
+                    store.dispatch('changeCategories', {
+                        amount: this.setCategories
+                    });
+                    eventBus.$emit('categoriesData');
+                })
+                .catch(err => {
+                    console.log(err);
+                    alert('获取分类失败！');
+                });
+        }
+    });
+
+    new Vue({
+        el: '#tbody-articles',
+        computed: {
+            showArticle() {
+                return store.getters.getArticleCategory;
+            }
+        },
+        methods: {
+            // 注意，这个是更新事件的按钮，在这里进行请求好，然后存储到 store 中，给后面的组件使用
+            updateArticle(articleId) {
+                axios
+                    .get('http://localhost:8080/admin/article/' + articleId, {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => {
+                        store.dispatch('changeArticle', {
+                            amount: response.data
+                        });
+                        // 当点击编辑按钮的时候呢，告诉他里面的子组件改变一下默认数据，默认选择的名称
+                        eventBus.$emit('categoriesData', response.data.categoryId);
+                        // 同时，和更新页面说一下默认是选择这个名称中的 id 的
+                        eventBus.$emit('transferUpdateCategoryId', response.data.categoryId)
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('更新文章时获取文章数据失败！');
+                    });
+                $('#updateModal').modal();
+
+            },
+            // 这里是删除事件的按钮
+            deleteArticle(articleId) {
+                $('#myModal').modal();
+                eventBus.tmpDeleteId = articleId;
+            }
+        },
+        mounted() {
+            axios
+                .get('http://localhost:8080/api/article/list', {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                })
+                .then(response => {
+                    // 返回数据的时候呢，是先按照 isTop 进行排序的，但是呢，被 dataTable 给打乱了，按照他的标准重新排序了
+                    // 不过呢，他那里还是可以进行设置的
+                    store.dispatch('changeArticleCategory', {
+                        amount: response.data
+                    });
+                    this.$nextTick(() => {
+                        $('#dataTable-articles').DataTable(dataTableMeta);
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                    alert('获取文章分类失败！');
+                });
+            // 突然明白，vue 的 computed 属性太强大了，根本不需要这些东西，额，还是需要的，因为呢，dataTable 的数据不是和 vue 共用的
+            eventBus.$on('changeArticleCategory', function() {
+                // 对原本的注册过的 dataTable 进行销毁
+                $('#dataTable-articles').DataTable().destroy();
+                this.$nextTick(() => {
+                    $('#dataTable-articles').DataTable(dataTableMeta);
+                });
+                // 这个函数就是对 v-for 进行强制刷新的
+                // this.$forceUpdate();
+
+                // 这个是进行删除全部行的，不能调用这个，因为会清楚全部的 html 页面内容的，导致后面有数据了，都无法进行刷新了
+                // $('#dataTable-articles').DataTable().rows().remove().draw();
+
+                // 一开始想着定义属性的，结果发现动态变化的数据，用 computed 比较好
+                // this.articles = store.getters.getArticleCategory;
+            }.bind(this));
+
+            eventBus.$on('deleteArticleInDataTable', function(articleId) {
+                $('#dataTable-articles').DataTable().row('#tableTd' + articleId).remove().draw();
+            }.bind(this));
+        }
+    });
+
+    // 删除操作
+    new Vue({
+        el: '#confirmBtn',
+        methods: {
+            deleteArticle: function() {
+                axios
+                    .delete('http://localhost:8080/admin/article/' + eventBus.tmpDeleteId)
+                    .then(response => {
+                        console.log(response);
+                        store.dispatch('deleteArticle', {
+                            amount: eventBus.tmpDeleteId
+                        });
+                        // 注意，此时 store 中的数据是删除了，因此呢，此时第一次删除你会看到确实是没了
+                        // 但是呢，dataTable 中的数据和 vue 是不共通的，因此呢，还需删除那边的
+                        eventBus.$emit('deleteArticleInDataTable', eventBus.tmpDeleteId);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('删除 id = ' + eventBus.tmpDeleteId + ' 的文章失败！');
+                    });
+            }
+        }
+    });
+
+    /*
+    有父类进行引用了
+    new Vue({
+        el: '#addCategories',
+        component: ['selectCategory'],
+        data: {
+            setCategories: [],
+            setSelectId: 'appendCategory'
+        },
+        mounted() {
+            eventBus.$on('categoriesData', function() {
+                this.setCategories = store.getters.getCategories;
+            }.bind(this));
+        }
+    });
+     */
+
+    // 添加文章
+    new Vue({
+        el: '#addArticleRow',
+        component: ['selectCategory'],
+        data: {
+            setCategories: [],
+            // 给子组件进行区分
+            setSelectId: 'appendCategory',
+            // 用于获取前端选取到的分类 ID
+            selectCategoryId: -1,
+            titleData: '',
+            summaryData: '',
+            pictureData: '',
+            contentData: '',
+            isTopData: false
+        },
+        methods: {
+            // 开始添加文章的按钮事件
+            addArticle: function() {
+                if (this.selectCategoryId == -1)
+                {
+                    alert('请选择分类！');
+                    return;
+                }
+                axios
+                    .post('http://localhost:8080/admin/article', {
+                        title: this.titleData,
+                        summary: this.summaryData,
+                        isTop: this.isTopData,
+                        content: this.contentData,
+                        pictureUrl: this.pictureData,
+                        categoryId: this.selectCategoryId
+                    })
+                    .then(response => {
+                        console.log(response);
+                        // alert('添加文章成功！');
+                        // location.reload();
+                        // 这次我们不通过这里进行获取了，在子组件那边获取吧
+                        eventBus.$emit('addOverToChangeCategory', this.selectCategoryId);
+                        // 添加完成后返回顶部
+                        window.scrollTo(0, 0);
+
+                        // 这里有一个问题，就是，虽然获取到了新数据
+                        // 但是，select 那边，如果之前选择的是 全部 还好，但是，选择其他标签了，结果显示的是全部的数据
+                        // 这就很尴尬了
+                        // 问题已经解决了，在子组件增加一个 v-model 即可
+                        /*
+                        axios
+                            .get('http://localhost:8080/api/article/list', {
+                                headers: {
+                                    'Cache-Control': 'no-cache'
+                                }
+                            })
+                            .then(response => {
+                                store.dispatch('changeArticleCategory', {
+                                    amount: response.data
+                                });
+                                eventBus.$emit('changeArticleCategory');
+                                window.scrollTo(0, 0);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                alert('添加文章后重新获取数据失败！');
+                            });
+                         */
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('添加文章失败！');
+                    });
+            }
+        },
+        mounted() {
+            eventBus.$on('categoriesData', function() {
+                this.setCategories = store.getters.getCategories;
+            }.bind(this));
+            // 通过子组件获取到选中的 id
+            eventBus.$on('transferSelectId', function(categoryId) {
+                this.selectCategoryId = categoryId;
+            }.bind(this));
+        }
+    });
+
+    // 注意，这里也是有问题的，服务器那边，这里直接点击的，也会增加文章的访问量的，因此访问量并不是真正的
+    new Vue({
+        el: '#updateModal',
+        data: {
+            setSelectId: 'updateCategory',
+            updateCategoryId: 0
+        },
+        computed: {
+            showArticleDto() {
+                return store.getters.getArticle;
+            },
+            setCategories() {
+                if (store.getters.getCategories.length != 0)
+                {
+                    /*console.log(2);
+                    let arr = store.getters.getCategories.slice(1, store.getters.getCategories.length);
+                    console.log(arr == store.getters.getCategories);
+                    console.log(arr);
+                    console.log(store.getters.getCategories);*/
+                    // 写上这个以后，会报错 TypeError: Cannot read properties of undefined (reading 'name')
+                    // 不过呢，问题不大，不影响使用，至于原因是什么，不清楚
+                    return store.getters.getCategories.slice(1, store.getters.getCategories.length);
+                }
+                // console.log('1');
+                return store.getters.getCategories;
+            }
+        },
+        methods: {
+            confirmUpdateArticle: function () {
+                // 这里还有一个要注意的地方，就是，点击更新按钮之后呢，默认就消失页面，然后，主页面的下拉框会显示全部的
+                // 因此呢，这里我们还要重新发送请求去获取当前分类下的文章，看看是否更新了
+                // console.log(store.getters.getArticle);
+                // console.log(this.updateCategoryId);
+                // 注意，不要使用这个方式来充当数据，因为呢，会被识别到 application/www-xx 啥的，反正不是 application/json 的数据形式
+                // 同时，这么提交，也不好，因为呢，会将所有数据提交，包括我们不想更新的数据，比如创建日期还有 traffic
+                // console.log(JSON.stringify(store.getters.getArticle));
+                axios
+                    .put('http://localhost:8080/admin/article/' + store.getters.getArticle.id, {
+                        // 好孩子不要学，因为，这里直接操作 store 中的数据了
+                        id: store.getters.getArticle.id,
+                        title: store.getters.getArticle.title,
+                        summary: store.getters.getArticle.summary,
+                        isTop: store.getters.getArticle.isTop,
+                        // 傻逼了，忘记了。。。
+                        categoryId: this.updateCategoryId,
+                        pictureUrl: store.getters.getArticle.pictureUrl,
+                        content: store.getters.getArticle.content
+                    })
+                    .then(response => {
+                        console.log(response);
+                        // 然后让子组件进行主页面的刷新到相关分类，原本想要只给 add 使用的，没想到 update 也可以使用
+                        eventBus.$emit('addOverToChangeCategory', this.updateCategoryId);
+                        window.scrollTo(0, 0);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('更新 id = ' + store.getters.getArticle.id + ' 的文章失败！');
+                    });
+            }
+        },
+        mounted() {
+            eventBus.$on('transferUpdateCategoryId', function(categoryId) {
+                this.updateCategoryId = categoryId;
+            }.bind(this));
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aliuselly 个人博客</title>
+
+<!--    styles-->
+    <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
+<!--    js-->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script src="js/vue/vue.min.js"></script>
+    <script src="js/vue/vue-axios.min.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+<body>
+<!--引入头部-->
+    <div id="blog-header">
+        <custom-header></custom-header>
+    </div>
+
+    <div style="clear: both;"></div>
+<!--    中间的内容-->
+    <div id="content">
+        <div id="category">
+            <div-category v-for="category in categories" v-bind:category="category" v-bind:key="category.id"></div-category>
+        </div>
+
+        <div id="articleInfos">
+            <div-article v-for="articlePicture in articlePictures" v-bind:key="articlePicture.id" v-bind:article="articlePicture"></div-article>
+        </div>
+    </div>
+
+<!--引入尾部-->
+    <div id="blog-footer">
+        <custom-footer></custom-footer>
+    </div>
+
+    <script>
+        // 原本想用 Vuex 的，但是，感觉就交换一个数据而已，因此呢，感觉没啥必要，这里通过一个消息交换站解决
+        let blogBus = new Vue({
+
+        });
+
+        // 头部
+        new Vue({
+            el: '#blog-header',
+            component: ['CustomHeader']
+        });
+
+        // 尾部
+        new Vue({
+            el: '#blog-footer',
+            component: ['CustomFooter']
+        });
+
+        // 获取分类信息
+        new Vue({
+            el: '#category',
+            data: {
+                categories: []
+            },
+            mounted() {
+                axios
+                    .get('http://localhost:8080/api/category/list', {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => {
+                        this.categories = response.data;
+                        this.categories.unshift({
+                            id: -1,
+                            name: '全部'
+                        });
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('获取全部分类失败！');
+                    });
+            }
+        });
+
+        // 获取文章信息
+        new Vue({
+            el: '#articleInfos',
+            data: {
+                articles: []
+            },
+            computed: {
+                articlePictures() {
+                    return this.articles;
+                }
+            },
+            methods: {
+                initArticles() {
+                    axios
+                        .get('http://localhost:8080/api/article/list', {
+                            headers: {
+                                'Cache-Control': 'no-cache'
+                            }
+                        })
+                        .then(response => this.articles = response.data)
+                        .catch(err => {
+                            console.log(err);
+                            alert('获取全部文章信息失败！');
+                        });
+                }
+            },
+            mounted() {
+                this.initArticles();
+
+                // 监听从分类模块那边的消息
+                blogBus.$on('allCategoryArticles', function() {
+                    this.initArticles();
+                }.bind(this));
+
+                blogBus.$on('categoryArticlesDataReady', function(data) {
+                    this.articles = data;
+                }.bind(this));
+            }
+        });
+    </script>
+</body>
+</html>

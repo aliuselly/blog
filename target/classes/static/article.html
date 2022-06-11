@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>aliuselly 个人博客</title>
+
+<!--    styles-->
+    <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<!--    文章 css-->
+    <link href="css/article.css" rel="stylesheet">
+<!--    引入 prism 代码高亮 css-->
+    <link href="css/prism/prism2.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
+    <style type="text/css">
+        .splitComment
+        {
+            border-bottom:dotted 2px #C0C0C0;
+        }
+    </style>
+
+    <!--    js-->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+<!--    代码高亮插件-->
+    <script src="js/prism/prism.js"></script>
+<!--    VUE 一定要放在之前，因为呢，下面的 js 文件要引用，会找不到的，放在后面-->
+    <script src="js/vue/vue.min.js"></script>
+    <script src="js/vue/vue-axios.min.js"></script>
+    <script src="js/article.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+<body>
+<!--引入头部-->
+    <div id="article-header">
+        <custom-header></custom-header>
+    </div>
+
+    <div id="content">
+<!--        返回按钮-->
+        <div id="backBtn">
+<!--            这个函数是表示后退一页-->
+            <label v-on:click="goBack">
+                <span class="glyphicon glyphicon-chevron-left"></span> Get Back
+            </label>
+        </div>
+
+        <div id="articleContext">
+    <!--        文章标题-->
+            <div>
+                <h1 id="articleTitle" v-text="article.title">文章标题</h1>
+            </div>
+    <!--        文章创建时间-->
+            <div>
+                <h5 id="articleCreateBy" v-text="article.createBy">文章创建时间</h5>
+            </div>
+    <!--        文章题图-->
+            <div class="articlePicture">
+                <img id="articlePicture" v-bind:src="article.pictureUrl">
+            </div>
+    <!--        文章内容-->
+            <div id="articleContent" style="clear: both" v-html="article.content">
+
+            </div>
+        </div>
+
+        <!--        评论列表-->
+        <div style="margin-top: 60px;">
+            <label>评论列表：</label>
+        </div>
+        <div id="commentList" class="commentList">
+<!--            垃圾的平衡上下的方式-->
+            <br>
+            <div-comment v-for="(articleComment, index) in articleComments" v-bind:comment="articleComment" v-bind:key="articleComment.id" v-bind:class="{splitComment: index != (articleComments.length - 1)}"></div-comment>
+        </div>
+<!--        让其分隔起来，上下都有一条线-->
+        <div class="commentList"></div>
+
+<!--        新增评论-->
+        <div class="comments" id="addCommentComponent">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    新增评论
+                </div>
+                <div class="panel-body">
+                    <label>名称: </label>
+                    <input id="commentName" class="form-control" v-model="userName" placeholder="请留下您的名称">
+                    <label>Email: </label>
+                    <input id="commentEmail" class="form-control" v-model="userEmail" placeholder="Email 可留空">
+                    <label>评论内容: </label>
+                    <textarea id="commentContent" rows="3" class="form-control" v-model="userContent" placeholder="请留下您宝贵的意见"></textarea>
+                    <br>
+                    <div class="text-right">
+                        <button id="addComment" class="btn btn-success" v-on:click="addCommentAction">
+                            确认添加
+                        </button>
+                    </div>
+                </div>
+            </div>
+<!--            END PANEL-->
+        </div>
+<!--        END COMMENTS-->
+
+
+        <!--    提示不能为空信息 MODAL-->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header alert-success">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">温馨提示: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>名称和评论内容不能为空！同时希望您能留下您高贵的 Email 地址供我们联系！</label>
+                            </div>
+                        </div>
+                        <!--                    END ROW-->
+                    </div>
+                    <!--                END MODAL BODY-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">我知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END MODAL-->
+
+        <!--    添加成功信息提示 MODAL-->
+<!--
+注意，这里有一个很好的事件 click.self 表示点击的是自己的时候，同时呢，
+这里的最外层的 div，点击才出现，出现就是整个屏幕外层，覆盖上去的，而 modal-dialog 这里才是显示出来的边框，
+点击 modal-dialog 的时候是不会生效的，具体你试下 F12 看下具体分布吧
+因此呢，这里捣蛋式地实现了点击区域外就刷新的操作，就是套个整个屏幕的外层
+点击父组件内的组件肯定不是 click.self，但是，父组件是整个屏幕，所以点击子组件外就是父组件，就会触发 click.self
+-->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" v-on:click.self="doReload">
+            <div class="modal-dialog">
+                <div class="modal-content" id="addModalContent">
+                    <div class="modal-header alert-success">
+                        <h4 class="modal-title">系统提示: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>添加成功！</label>
+                            </div>
+                        </div>
+                        <!--                    END ROW-->
+                    </div>
+                    <!--                END MODAL BODY-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="addConfirmBtn" v-on:click="doReload">感谢支持！</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END MODAL-->
+    </div>
+
+<!-- 引入尾部-->
+    <div id="article-footer">
+        <custom-footer></custom-footer>
+    </div>
+
+    <script>
+        let articleBus = new Vue({
+            data: {
+                articleId: 0
+            },
+            methods: {
+                getPathVariable(pathVariable) {
+                    // 输出的是 ? 后面的的数据
+                    let variable = window.location.search.substring(1);
+                    let variables = variable.split('&');
+                    for (let i = 0; i < variables.length; i++)
+                    {
+                        let params = variables[i].split('=');
+                        if (params[0] == pathVariable)
+                        {
+                            return params[1];
+                        }
+                    }
+                }
+            },
+            // 这里必须是 created 的，在 mounted 之前就弄好，避免没有数据
+            created() {
+                this.articleId = this.getPathVariable('articleId');
+            }
+        });
+
+        new Vue({
+            el: '#article-header',
+            component: ['CustomHeader']
+        });
+
+        new Vue({
+            el: '#article-footer',
+            component: ['CustomFooter']
+        });
+
+        new Vue({
+            el: '#backBtn',
+            methods: {
+                goBack() {
+                    history.go(-1);
+                }
+            }
+        });
+
+        // 文章信息
+        new Vue({
+            el: '#articleContext',
+            data: {
+                article: {}
+            },
+            mounted() {
+                axios
+                    .get('http://localhost:8080/api/article/' + articleBus.articleId, {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => {
+                        this.article = response.data;
+                        // 实现变化标题，让其和文章标题相同
+                        document.title = this.article.title;
+                        this.$nextTick(() => {
+                            // 代码高亮
+                            Prism.highlightAll();
+                        });
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        alert('获取 articleId = ' + articleBus.articleId + ' 的文章信息失败！');
+                    });
+            }
+        });
+
+        // 评论信息
+        new Vue({
+            el: '#commentList',
+            data: {
+                articleComments: []
+            },
+            mounted() {
+                axios
+                    .get('http://localhost:8080/api/comment/article/' + articleBus.articleId, {
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    })
+                    .then(response => this.articleComments = response.data)
+                    .catch(err => {
+                        console.log(err);
+                        alert('获取 articleId = ' + articleBus.articleId + ' 的文章下的评论信息失败！');
+                    });
+            }
+        });
+
+        // 添加评论信息
+        new Vue({
+            el: '#addCommentComponent',
+            data: {
+                userName: '',
+                userEmail: '',
+                userContent: ''
+            },
+            methods: {
+                addCommentAction() {
+                    // 额，差点忘了，this.userName 是真值的时候才触发的，!this.userName 是假值即可
+                    if (!this.userName || !this.userContent)
+                    {
+                        $('#modal').modal();
+                        return;
+                    }
+                    axios
+                        .post('http://localhost:8080/api/comment/article/' + articleBus.articleId, {
+                            name: this.userName,
+                            email: this.userEmail,
+                            content: this.userContent
+                        })
+                        .then(response => {
+                            console.log(response);
+                            // 弹出添加成功页面
+                            $('#addModal').modal();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            alert('添加评论信息失败！');
+                        });
+                }
+            }
+        });
+
+        // 弹出的成功页面，点击确认后刷新
+        new Vue({
+            el: '#addModal',
+            methods: {
+                doReload() {
+                    location.reload();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
