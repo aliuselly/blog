@@ -1,8 +1,9 @@
 // 血的教训，貌似咱们这里没有支持那些 ES6 啥的，支持，但不完全，比如 export 这些就不行，但 let const 可以
 Vue.component('custom-header', {
     template: "<nav id='top'>" +
-        "            <span id='logo' style='float: left; margin-left: 10px'>" +
-        "                <img src='img/blog-logo.jpg'>" +
+        "            <span id='logo' style='float: left; margin-left: 10px' v-on:click='switchShow'>" +
+        // "                <img src='img/blog-logo.jpg'>" +
+                        "{{ shehuizhuyiwoaini }}" +
         "            </span>" +
         "            <a href='/index.html'>首页</a>" +
         "            <a href='/blog.html'>博客</a>" +
@@ -12,10 +13,24 @@ Vue.component('custom-header', {
     data: function ()
     {
         return {
-            currentDate: ''
+            currentDate: '',
+            index: 0,
+            jiazhiguan: [
+                "富强 | 民主 | 文明 | 和谐",
+                "自由 | 平等 | 公平 | 法治",
+                "爱国 | 敬业 | 诚信 | 友善"
+            ]
+        }
+    },
+    computed: {
+        shehuizhuyiwoaini() {
+            return this.jiazhiguan[this.index];
         }
     },
     methods: {
+        switchShow() {
+            this.index = (this.index + 1 == this.jiazhiguan.length ? 0 : this.index + 1);
+        },
         getCurrentDate: function () {
             let d = new Date();
             let week;
